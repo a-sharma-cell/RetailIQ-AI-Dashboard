@@ -2,11 +2,14 @@ import streamlit as st
 import pandasai as pai
 from pandasai_litellm.litellm import LiteLLM
 from dotenv import load_dotenv
+from pathlib import Path
 import os
 
 # Load environment variables from .env file
-load_dotenv()
+env_path = Path(__file__).parent / ".env"
+load_dotenv(dotenv_path=env_path)
 api_key = os.getenv("GEMINI_API_KEY")
+os.environ["GEMINI_API_KEY"] = api_key
 
 # Page configuration
 st.set_page_config(page_title="RetailIQ AI Dashboard", layout="wide")
@@ -14,7 +17,7 @@ st.title("RetailIQ - AI Powered Sales Assistant")
 st.write("Ask anything about your sales data in plain English.")
 
 # Connect to Gemini via LiteLLM
-llm = LiteLLM(model="gemini/gemini-2.5-flash", api_key=api_key)
+llm = LiteLLM(model="gemini/gemini-2.5-flash")
 pai.config.set({"llm": llm})
 
 # Load cleaned dataset

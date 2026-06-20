@@ -1,4 +1,4 @@
-import pandas as pd
+import streamlit as st
 import pandasai as pai
 from pandasai_litellm.litellm import LiteLLM
 from dotenv import load_dotenv
@@ -6,15 +6,14 @@ import os
 
 load_dotenv()
 api_key = os.getenv("GEMINI_API_KEY")
-
-# Explicitly set as GEMINI_API_KEY so LiteLLM routes to Google AI Studio, not Vertex
 os.environ["GEMINI_API_KEY"] = api_key
 
 llm = LiteLLM(model="gemini/gemini-2.5-flash")
-
 pai.config.set({"llm": llm})
 
 df = pai.read_csv("superstore_cleaned.csv")
 
-response = df.chat("Which region had the highest profit?")
-print(response)
+if st.button("Test"):
+    response = df.chat("Which region had the highest profit?")
+    st.write(response)
+    
