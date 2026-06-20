@@ -14,7 +14,7 @@ os.environ["GEMINI_API_KEY"] = api_key
 # Page configuration
 st.set_page_config(page_title="RetailIQ AI Dashboard", layout="wide")
 st.title("RetailIQ - AI Powered Sales Assistant")
-st.write("Ask anything about your sales data in plain English.")
+st.write("Ask anything about your sales data.")
 
 # Connect to Gemini via LiteLLM
 llm = LiteLLM(model="gemini/gemini-2.5-flash")
