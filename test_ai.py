@@ -1,20 +1,22 @@
+import pandas as pd
 import pandasai as pai
 from pandasai_litellm.litellm import LiteLLM
+from dotenv import load_dotenv
+import os
 
-# Gemini connect karo
-llm = LiteLLM(model="gemini/gemini-2.5-flash", api_key="AQ.Ab8RN6L7gynsgEzNH7LWn4LXIZ4UYCYCIbMxi_d5hv_nWQ4BKw")
+# Load environment variables from .env file
+load_dotenv()
+api_key = os.getenv("GEMINI_API_KEY")
+
+# Connect to Gemini via LiteLLM
+llm = LiteLLM(model="gemini/gemini-2.5-flash", api_key=api_key)
+
 # Configure
 pai.config.set({"llm": llm})
 
-# Cleaned data load karo
+# Load cleaned data
 df = pai.read_csv("superstore_cleaned.csv")
 
-# Test sawal poocho
+# Test questions
 response = df.chat("Which region had the highest profit?")
 print(response)
-
-response1 = df.chat("Which category has the most sales?")
-print(response1)
-
-response2 = df.chat("What is the average discount given in Furniture category?")
-print(response2)
