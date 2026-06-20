@@ -81,31 +81,32 @@ To remove the technical barrier to data access, the dataset was connected to **G
 
 ---
 
-## 7. Live Deliverables
+## 7. Deliverables
 
-- **Power BI Dashboard:** *[link to be added]*
-- **Streamlit AI Assistant:** *[link to be added]*
-
-## 8. Dashboard Preview
-
-*[screenshots to be added]*
+- **Power BI Dashboard:** Included in this repository as `retail dashboard.pbix` — open in Power BI Desktop to explore.
+- **Streamlit AI Assistant:** Runs locally via `streamlit run app.py` (see setup instructions below).
 
 ---
 
-## 9. Repository Structure
+## 8. Repository Structure
 
-```
 RetailIQ-AI-Dashboard/
-├── app.py                  # Streamlit application (conversational AI interface)
-├── clean_data.py           # Data cleaning and transformation pipeline
-├── load_to_mysql.py        # MySQL database loading script
-├── superstore_cleaned.csv  # Cleaned, analysis-ready dataset
-├── retail dashboard.pbix   # Power BI dashboard
-├── requirements.txt        # Python dependencies
-└── README.md
-```
 
-## 10. Reproducing This Project
+├── app.py                  # Streamlit application (conversational AI interface)
+
+├── clean_data.py           # Data cleaning and transformation pipeline
+
+├── load_to_mysql.py        # MySQL database loading script
+
+├── superstore_cleaned.csv  # Cleaned, analysis-ready dataset
+
+├── retail dashboard.pbix   # Power BI dashboard
+
+├── requirements.txt        # Python dependencies
+
+└── README.md
+
+## 9. Reproducing This Project
 
 ```bash
 # 1. Clone the repository
