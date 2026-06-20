@@ -1,0 +1,5 @@
+pandasai.log
+exports/
+__pycache__/
+*.pyc
+.env
