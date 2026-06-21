@@ -1,0 +1,6 @@
+streamlit
+pandasai
+pandasai-litellm
+python-dotenv
+pandas
+mysql-connector-python
