@@ -85,6 +85,7 @@ To remove the technical barrier to data access, the dataset was connected to **G
 
 - **Power BI Dashboard:** Included in this repository as `retail dashboard.pbix` — open in Power BI Desktop to explore.
 - **Streamlit AI Assistant:** Runs locally via `streamlit run app.py` (see setup instructions below).
+- **App Link:** https://retailiq-atharva.streamlit.app/
 
 ---
 
